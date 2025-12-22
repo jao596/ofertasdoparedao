@@ -1,31 +1,209 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlphaFit Descontos</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupos de Promoções</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg: #050b2e;
+      --grid: rgba(255,255,255,0.04);
+      --primary: #1e90ff;
+      --primary-soft: rgba(30,144,255,0.15);
+      --text: #ffffff;
+      --muted: #b8c1ec;
+      --green: #1aff64;
+      --whats: #25d366;
+    }
+
+    * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 32px 32px;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 980px;
+      padding: 80px 24px 120px;
+      text-align: center;
+    }
+
+    h1 { font-size: 3rem; margin-bottom: 12px; font-weight: 700; }
+    .subtitle { font-size: 1.2rem; color: var(--muted); margin-bottom: 50px; }
+
+    /* ===== CTA DOS GRUPOS ===== */
+    .cta-group {
+      max-width: 620px;
+      margin: 0 auto 22px;
+      padding: 26px 30px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid var(--primary);
+      background: linear-gradient(180deg, var(--primary-soft), transparent);
+      backdrop-filter: blur(6px);
+      transition: .3s;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .cta-group:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 0 45px rgba(30,144,255,.7);
+      background: var(--primary);
+    }
+
+    .cta-group.whatsapp {
+      border-color: var(--whats);
+      background: linear-gradient(180deg, rgba(37,211,102,.2), transparent);
+    }
+
+    .cta-group.whatsapp:hover {
+      background: var(--whats);
+      box-shadow: 0 0 45px rgba(37,211,102,.7);
+    }
+
+    .cta-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,.15);
+      flex-shrink: 0;
+    }
+
+    .cta-text {
+      text-align: left;
+    }
+
+    .cta-text strong {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .cta-text span {
+      font-size: .95rem;
+      color: #e0e6ff;
+      opacity: .9;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    /* ===== STATS ===== */
+    .stats {
+      position: relative; margin-top: 90px; padding: 48px 32px;
+      border-radius: 26px; background: rgba(0,0,0,.35);
+      border: 1px solid rgba(30,144,255,.7);
+      backdrop-filter: blur(6px);
+    }
+
+    .stats::before {
+      content: ""; position: absolute; inset: -2px; border-radius: 28px;
+      background: linear-gradient(180deg, rgba(30,144,255,.6), transparent);
+      z-index: -1; filter: blur(12px);
+    }
+
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 24px; margin-bottom: 44px;
+    }
+
+    .stat h2 { color: var(--green); font-size: 2.1rem; margin: 10px 0 6px; }
+    .stat span { color: var(--muted); font-size: .95rem; }
+
+    .features {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 22px;
+    }
+
+    .feature {
+      border: 1px solid rgba(30,144,255,.8); border-radius: 18px;
+      padding: 26px; background: rgba(0,0,0,.45); text-align: left;
+      transition: .3s;
+    }
+
+    .feature:hover { transform: translateY(-6px); box-shadow: 0 0 36px rgba(30,144,255,.45); }
+
+    footer { margin-top: 90px; font-size: .85rem; color: var(--muted); }
+
+    @media (max-width: 820px) {
+      .stats-grid, .features { grid-template-columns: 1fr; }
+      h1 { font-size: 2.2rem; }
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Barra superior -->
-    <div class="top-bar">
-        Receba cupons direto no seu WhatsApp
+<div class="wrapper">
+
+  <h1>Não perca o próximo Bug!</h1>
+  <p class="subtitle">
+    Entre agora nos grupos e receba promoções antes de todo mundo.
+  </p>
+
+  <!-- TELEGRAM -->
+  <a class="cta-group" href="https://t.me/SEU_CANAL" target="_blank">
+    <div class="cta-icon">
+      <i data-lucide="send"></i>
+    </div>
+    <div class="cta-text">
+      <strong>Grupo VIP no Telegram</strong>
+      <span>⚡ Ofertas em tempo real • Cupons limitados</span>
+    </div>
+  </a>
+
+  <!-- WHATSAPP -->
+  <a class="cta-group whatsapp" href="https://chat.whatsapp.com/SEU_GRUPO" target="_blank">
+    <div class="cta-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.52 3.48A11.94 11.94 0 0012 0C5.38 0 .04 5.34.04 11.96c0 2.1.55 4.15 1.6 5.96L0 24l6.27-1.64a11.93 11.93 0 005.73 1.46h.01c6.62 0 11.96-5.34 11.96-11.96a11.9 11.9 0 00-3.45-8.38z"/>
+      </svg>
+    </div>
+    <div class="cta-text">
+      <strong>Grupo Exclusivo no WhatsApp</strong>
+      <span>🔥 Bugs secretos • Vagas limitadas</span>
+    </div>
+  </a>
+
+  <div class="stats">
+    <div class="stats-grid">
+      <div class="stat"><i data-lucide="wallet"></i><h2>+R$ 2.512.347</h2><span>Economia gerada</span></div>
+      <div class="stat"><i data-lucide="users"></i><h2>+241.000</h2><span>Membros</span></div>
+      <div class="stat"><i data-lucide="zap"></i><h2>+66.000</h2><span>Ofertas postadas</span></div>
     </div>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <img src="assets/logo.png..png" alt="Logo" class="logo">
-        <h1>Conquiste o corpo dos sonhos pagando menos</h1>
-        <p class="subtitle">Descontos de até 70% em produtos fitness! 💪</p>
-        <a href="https://chat.whatsapp.com/Dj8AWMuXjSIBDPB8bizeQZ" class="cta-button">QUERO PARTICIPAR</a>
-        <p class="social-proof">Já somos +3 mil membros 💥</p>
-    </header>
+    <div class="features">
+      <div class="feature"><i data-lucide="zap"></i><h3>Cupons acabam rápido</h3><p>Receba alertas assim que pintarem.</p></div>
+      <div class="feature"><i data-lucide="bell"></i><h3>Ofertas em tempo real</h3><p>Preço, cupom e link direto.</p></div>
+      <div class="feature"><i data-lucide="shield-check"></i><h3>Curadoria real</h3><p>Só ofertas que realmente valem.</p></div>
+    </div>
+  </div>
 
-    <!-- Rodapé -->
-    <footer class="footer">
-        <a href="#">Política de Privacidade</a> | 
-        <a href="#">Termos de Uso</a> | 
-        <span>© 2025 Todos os direitos reservados</span>
-    </footer>
+  <footer>© 2025 • Página de Promoções</footer>
+</div>
+
+<script>lucide.createIcons();</script>
 </body>
 </html>
+
