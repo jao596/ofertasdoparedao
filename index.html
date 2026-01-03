@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Promotech Ofertas</title>
 
+  <!-- META PIXEL -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1286805599522972');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1286805599522972&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- FIM PIXEL -->
+
   <style>
     body{
       margin:0;
@@ -101,15 +120,15 @@
       opacity:0.85;
       margin-top:20px;
     }
-
   </style>
 </head>
+
 <body>
 
   <div class="container">
 
+    <!-- LOGO -->
     <div class="logo">
-      <!-- Substitua pela sua logo -->
       <img src="https://i.postimg.cc/XJ3Zwg1v/Logopromotech.jpg" alt="Promotech Ofertas">
     </div>
 
@@ -129,14 +148,18 @@
       👥 Comunidade ativa compartilhando promoções todos os dias
     </div>
 
-    <!-- BOTÃO WHATSAPP -->
-    <a href="https://chat.whatsapp.com/LVUjPADsN1H9Tt4zvvAXxH" class="btn">
+    <!-- BOTÃO WHATSAPP (EVENTO LEAD) -->
+    <a href="https://chat.whatsapp.com/LVUjPADsN1H9Tt4zvvAXxH"
+       class="btn"
+       onclick="fbq('track','Lead');">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
       🔥 Receber ofertas no WhatsApp
     </a>
 
-    <!-- BOTÃO TELEGRAM -->
-    <a href="https://t.me/Promotechn" class="btn telegram">
+    <!-- BOTÃO TELEGRAM (EVENTO LEAD) -->
+    <a href="https://t.me/Promotechn"
+       class="btn telegram"
+       onclick="fbq('track','Lead');">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
       🚀 Entrar no grupo VIP do Telegram
     </a>
@@ -149,4 +172,5 @@
 
 </body>
 </html>
+
 
