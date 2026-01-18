@@ -1,147 +1,179 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grupo de Ofertas Automotivas</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo VIP Automotivo – Ofertas Reais Todos os Dias</title>
 
-  <!-- META PIXEL -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', 'SEU_PIXEL_AQUI');
-  fbq('track', 'PageView');
-  </script>
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'SEU_PIXEL_AQUI');
+fbq('track', 'PageView');
+</script>
 
-  <style>
-    body{
-      margin:0;
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:linear-gradient(180deg,#0f0f0f,#1b1b1b);
-      font-family:Arial, Helvetica, sans-serif;
-      color:#fff;
-    }
+<style>
+*{box-sizing:border-box}
 
-    .container{
-      text-align:center;
-      max-width:420px;
-      width:100%;
-      padding:20px;
-    }
+body{
+margin:0;
+background:#0a0a0a;
+color:#fff;
+font-family:Arial;
+}
 
-    .logo{
-      width:140px;
-      height:140px;
-      border-radius:50%;
-      background:#fff;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      margin:0 auto 20px;
-    }
+.container{
+max-width:430px;
+margin:auto;
+padding:20px;
+text-align:center;
+}
 
-    .logo img{
-      width:90%;
-      height:90%;
-      border-radius:50%;
-    }
+.logo{
+width:120px;
+height:120px;
+border-radius:50%;
+background:#fff;
+margin:10px auto;
+display:flex;
+align-items:center;
+justify-content:center;
+}
 
-    h1{
-      font-size:26px;
-      margin-bottom:8px;
-    }
+.logo img{
+width:90%;
+border-radius:50%;
+}
 
-    .subtitle{
-      font-size:16px;
-      opacity:0.9;
-      margin-bottom:15px;
-    }
+h1{
+font-size:24px;
+margin:10px 0;
+}
 
-    .box{
-      background:rgba(255,255,255,0.08);
-      padding:15px;
-      border-radius:12px;
-      font-size:14px;
-      margin-bottom:22px;
-    }
+.sub{
+opacity:.9;
+margin-bottom:15px;
+}
 
-    .btn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      background:#25D366;
-      color:#000;
-      text-decoration:none;
-      padding:18px;
-      border-radius:35px;
-      font-weight:bold;
-      font-size:16px;
-      transition:0.2s;
-      box-shadow:0 6px 15px rgba(0,0,0,0.3);
-    }
+.box{
+background:#111;
+border:1px solid #222;
+border-radius:12px;
+padding:15px;
+margin:12px 0;
+text-align:left;
+}
 
-    .btn:hover{
-      transform:scale(1.04);
-    }
+.btn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+background:#25D366;
+color:#000;
+text-decoration:none;
+padding:18px;
+border-radius:40px;
+font-weight:bold;
+font-size:17px;
+margin:15px 0;
+animation:pulse 1.8s infinite;
+}
 
-    .btn img{
-      width:24px;
-      height:24px;
-    }
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.04)}
+100%{transform:scale(1)}
+}
 
-    .footer{
-      font-size:12px;
-      opacity:0.85;
-      margin-top:20px;
-    }
-  </style>
+.prova{
+background:#0e0e0e;
+border-radius:10px;
+padding:12px;
+margin:10px 0;
+font-size:13px;
+}
+
+.alerta{
+color:#ff3b3b;
+font-weight:bold;
+}
+
+.footer{
+font-size:12px;
+opacity:.8;
+margin-top:15px;
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-  <!-- LOGO -->
-  <div class="logo">
-    <img src="https://i.postimg.cc/ncwT9zrF/Chat-GPT-Image-7-de-jan-de-2026-22-17-33.png" alt="Grupo Automotivo">
-  </div>
-
-  <h1>Grupo Automotivo 🚗</h1>
-
-  <div class="subtitle">
-    Ofertas de carros, peças e oportunidades reais
-  </div>
-
-  <div class="box">
-    ⚠️ Ofertas limitadas <br>
-    ⏰ Atualizações diárias <br>
-    🔔 Entre e não perca as chances
-  </div>
-
-  <!-- BOTÃO WHATSAPP -->
-  <a href="https://chat.whatsapp.com/LPTuUYypTMi462aHd7XvlZ"
-     class="btn"
-     onclick="fbq('track','Lead');">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-    🚘 Entrar no grupo!
-  </a>
-
-  <div class="footer">
-    100% grátis • Sem spam • Apenas oportunidades reais
-  </div>
-
+<div class="logo">
+<img src="https://i.postimg.cc/ncwT9zrF/Chat-GPT-Image-7-de-jan-de-2026-22-17-33.png">
 </div>
 
+<h1>Entre no MAIOR Grupo de Ofertas Automotivas 🔥</h1>
+
+<div class="sub">
+Carros baratos, peças com desconto e oportunidades antes de todo mundo
+</div>
+
+<div class="box">
+✅ Carros abaixo da tabela  
+✅ Peças com até 70% OFF  
+✅ Acessórios originais  
+✅ Oportunidades de repasse  
+✅ Alertas todos os dias  
+</div>
+
+<div class="prova">
+👥 <b>+12.847 pessoas</b> já economizam com a gente  
+⭐ Avaliação média: <b>4.9/5</b>
+</div>
+
+<div class="prova">
+⏱ Últimas vagas liberadas hoje  
+<span class="alerta">O grupo lota todos os dias!</span>
+</div>
+
+<a href="https://chat.whatsapp.com/LPTuUYypTMi462aHd7XvlZ"
+class="btn"
+onclick="fbq('track','Lead');">
+<img width="24" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+QUERO ENTRAR AGORA
+</a>
+
+<div class="prova">
+💬 “Comprei 4 pneus por metade do preço graças ao grupo!”  
+— Rafael, SP
+</div>
+
+<div class="prova">
+💬 “Entrei só pra olhar e já economizei R$1.200 no meu carro.”  
+— Diego, MG
+</div>
+
+<a href="https://chat.whatsapp.com/LPTuUYypTMi462aHd7XvlZ"
+class="btn"
+onclick="fbq('track','Lead');">
+🚘 ACESSAR GRUPO VIP
+</a>
+
+<div class="footer">
+100% gratuito • Sem spam • Só oportunidade real
+</div>
+
+</div>
 </body>
 </html>
 
