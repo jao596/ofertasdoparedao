@@ -19,9 +19,9 @@
     }
 
     .user {
-  color: #ff0000;
-  font-weight: bold;
-}
+      color: #ff0000;
+      font-weight: bold;
+    }
 
     .container {
       max-width: 1000px;
@@ -172,6 +172,7 @@
       text-align: center;
       line-height: 1.4;
       margin-bottom: 20px;
+      white-space: pre-line;
     }
 
     .modal-botoes {
@@ -268,7 +269,7 @@
       <div class="card" style="margin-top: 20px;">
         <div class="desafio-box">
           <div class="vez" id="vezTexto">Vez de Jogador 1</div>
-          <div class="desafio" id="desafioTexto">Clique em “Sortear desafio” para começar.</div>
+          <div class="desafio" id="desafioTexto">Clique em “Ir para outra rodada” para começar.</div>
         </div>
 
         <div class="grid grid-2">
@@ -319,11 +320,16 @@
       ],
       quente: [
         "[User1], Lentamente tire a camiseta de [User2], com intenção! [User2], fique quieto(a) e apenas obedeça.",
-        "[User1], Encoste a boca em [User2] e fale lentamente três frases que deixariam ele(a) maluco (a).  [User2], tem algo que foi dito que você gostaria de fazer?",
-        "[User1], Diga a [User2] como gostaria que ele(a) estivesse vestido(a) agora. Descreva com detalhes",
-        "[User1], Tire sua roupa intima e comece a se mastubar ate a proxima rodada. [User2], tente se concentrar na proxima pergunta, se conseguir… rs",
-        "[User1], tire uma selfie beijando a parte do corpo de [User2] que você preferir ",
-        "[User2], dê um beijo apaixonado em [User1] por 10 segundos"
+        "[User1], Encoste a boca em [User2] e fale lentamente três frases que deixariam ele(a) maluco(a). [User2], tem algo que foi dito que você gostaria de fazer?",
+        "[User1], Diga a [User2] como gostaria que ele(a) estivesse vestido(a) agora. Descreva com detalhes.",
+        "[User1], Tire sua roupa íntima e comece a se masturbar até a próxima rodada. [User2], tente se concentrar na próxima pergunta, se conseguir… rs",
+        "[User1], tire uma selfie beijando a parte do corpo de [User2] que você preferir.",
+        "[User1], dê um beijo apaixonado em [User1] por 10 segundos.",
+        "[User1], Venda e faça o que quiser por 3 minutos com [User2].",
+        "[User1], Lamba meus mamilos até eu gemer",
+        "[User1], Faça um oral como se fosse o último da vida.",
+        "[User1], Beije sua parte favorita do meu corpo de [User2]."
+
       ]
     };
 
@@ -333,6 +339,7 @@
     let jogadorAtual = 1;
     let historico = [];
     let desafioPendente = "";
+    let ultimoTemplate = "";
 
     function iniciarJogo() {
       participante1 = document.getElementById("nome1").value.trim() || "Jogador 1";
@@ -341,6 +348,7 @@
       jogadorAtual = 1;
       historico = [];
       desafioPendente = "";
+      ultimoTemplate = "";
 
       document.getElementById("tituloParticipantes").textContent = `${participante1} × ${participante2}`;
       document.getElementById("nivelJogo").value = nivelAtual;
@@ -367,16 +375,17 @@
 
     function abrirDesafio() {
       const lista = desafios[nivelAtual];
-      let template = lista[Math.floor(Math.random() * lista.length)];
-      let final = montarDesafio(template);
+      if (!lista || lista.length === 0) return;
 
-      if (lista.length > 1 && historico.length > 0) {
-        while (final === historico[0]) {
-          template = lista[Math.floor(Math.random() * lista.length)];
-          final = montarDesafio(template);
-        }
-      }
+      let template;
 
+      do {
+        template = lista[Math.floor(Math.random() * lista.length)];
+      } while (lista.length > 1 && template === ultimoTemplate);
+
+      ultimoTemplate = template;
+
+      const final = montarDesafio(template);
       desafioPendente = final;
 
       const jogadorNome = jogadorAtual === 1 ? participante1 : participante2;
@@ -426,6 +435,11 @@
       document.getElementById("telaJogo").classList.add("hidden");
       document.getElementById("telaInicio").classList.remove("hidden");
       fecharModal();
+
+      historico = [];
+      desafioPendente = "";
+      ultimoTemplate = "";
+      jogadorAtual = 1;
     }
   </script>
 </body>
