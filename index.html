@@ -168,8 +168,11 @@ body {
   width: min(380px, 88vw);
 }
 
+/* HERO: imagem sem corte */
 .hero-left img {
   width: 100%;
+  height: auto;
+  display: block;
   filter: drop-shadow(0 16px 36px rgba(0,0,0,.13));
 }
 
@@ -341,11 +344,21 @@ body {
 
 .prod-card:hover { transform: translateY(-4px); }
 
-.prod-card img {
+/* CORREÇÃO: imagem do produto sem corte */
+.prod-card .img-wrap {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.prod-card .img-wrap img {
+  width: 100%;
+  height: auto;
   display: block;
+  object-fit: contain;
 }
 
 .prod-card .info {
@@ -436,10 +449,21 @@ body {
   overflow: hidden;
 }
 
-.bonus-item img {
+/* CORREÇÃO: imagem do bônus sem corte */
+.bonus-item .img-wrap {
   width: 100%;
-  height: 400px;
-  object-fit: cover;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 8px 4px;
+}
+
+.bonus-item .img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .bonus-item h3 {
@@ -483,6 +507,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 /* OFERTA */
@@ -570,11 +595,20 @@ body {
   text-align: left;
 }
 
-.test-card img {
+/* CORREÇÃO: imagem de depoimento sem corte */
+.test-card .img-wrap {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-card .img-wrap img {
+  width: 100%;
+  height: auto;
   display: block;
+  object-fit: contain;
 }
 
 .test-body {
@@ -729,7 +763,7 @@ footer {
   }
 }
 
-/* CELULAR - CARDS COMPACTOS */
+/* CELULAR */
 @media (max-width: 640px) {
   .topbar {
     font-size: .78rem;
@@ -853,11 +887,6 @@ footer {
     border-radius: 12px;
   }
 
-  .prod-card img {
-    height: 155px;
-    object-fit: cover;
-  }
-
   .prod-card .info {
     padding: 9px 6px 11px;
   }
@@ -932,11 +961,6 @@ footer {
     padding-bottom: 10px;
   }
 
-  .bonus-item img {
-    height: 135px;
-    object-fit: cover;
-  }
-
   .bonus-item h3 {
     font-size: .66rem;
     line-height: 1.15;
@@ -983,6 +1007,7 @@ footer {
     font-size: 2.3rem;
   }
 
+  /* Depoimentos em coluna única no mobile */
   .test-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -993,15 +1018,13 @@ footer {
   .test-card {
     max-width: 100%;
     display: grid;
-    grid-template-columns: 90px 1fr;
+    grid-template-columns: 100px 1fr;
     align-items: stretch;
     border-radius: 13px;
   }
 
-  .test-card img {
-    height: 100%;
-    min-height: 118px;
-    object-fit: cover;
+  .test-card .img-wrap {
+    min-height: 110px;
   }
 
   .test-body {
@@ -1079,10 +1102,6 @@ footer {
     gap: 8px;
   }
 
-  .prod-card img {
-    height: 140px;
-  }
-
   .bonus-showcase {
     grid-template-columns: 1fr;
   }
@@ -1091,12 +1110,11 @@ footer {
     display: grid;
     grid-template-columns: 95px 1fr;
     text-align: left;
-    min-height: 120px;
   }
 
-  .bonus-item img {
-    height: 100%;
-    min-height: 120px;
+  .bonus-item .img-wrap {
+    min-height: 100px;
+    padding: 6px;
   }
 
   .bonus-item h3 {
@@ -1201,7 +1219,7 @@ footer {
   <div class="max860">
     <div class="products-grid">
       <div class="prod-card">
-        <img src="andando-jesus-COLSvjBc.png" alt="Andando com Jesus">
+        <div class="img-wrap"><img src="andando-jesus-COLSvjBc.png" alt="Andando com Jesus"></div>
         <div class="info">
           <h4>Andando com Jesus</h4>
           <div class="ptag">R$14,90</div>
@@ -1209,7 +1227,7 @@ footer {
       </div>
 
       <div class="prod-card">
-        <img src="aprendendo-orar-D1jlKE3-.png" alt="Aprendendo a Orar">
+        <div class="img-wrap"><img src="aprendendo-orar-D1jlKE3-.png" alt="Aprendendo a Orar"></div>
         <div class="info">
           <h4>Aprendendo a Orar</h4>
           <div class="ptag">R$12,90</div>
@@ -1217,7 +1235,7 @@ footer {
       </div>
 
       <div class="prod-card">
-        <img src="alfabeto-biblico-DwXPEDSN.png" alt="Alfabeto Bíblico">
+        <div class="img-wrap"><img src="alfabeto-biblico-DwXPEDSN.png" alt="Alfabeto Bíblico"></div>
         <div class="info">
           <h4>Alfabeto Bíblico</h4>
           <div class="ptag">R$9,90</div>
@@ -1225,7 +1243,7 @@ footer {
       </div>
 
       <div class="prod-card">
-        <img src="atividades-biblicas-KVvsaskE.png" alt="Atividades Bíblicas">
+        <div class="img-wrap"><img src="atividades-biblicas-KVvsaskE.png" alt="Atividades Bíblicas"></div>
         <div class="info">
           <h4>Atividades Bíblicas</h4>
           <div class="ptag">R$14,90</div>
@@ -1233,7 +1251,7 @@ footer {
       </div>
 
       <div class="prod-card">
-        <img src="amor-deus-CWwauwO4.png" alt="O Amor de Deus">
+        <div class="img-wrap"><img src="amor-deus-CWwauwO4.png" alt="O Amor de Deus"></div>
         <div class="info">
           <h4>O Amor de Deus</h4>
           <div class="ptag">R$9,90</div>
@@ -1241,7 +1259,7 @@ footer {
       </div>
 
       <div class="prod-card">
-        <img src="antigo-testamento-DeO6j-VC.png" alt="Antigo Testamento">
+        <div class="img-wrap"><img src="antigo-testamento-DeO6j-VC.png" alt="Antigo Testamento"></div>
         <div class="info">
           <h4>Antigo Testamento</h4>
           <div class="ptag">R$12,90</div>
@@ -1289,7 +1307,7 @@ footer {
   <div class="bonus-showcase">
     <div class="bonus-item">
       <div class="badge">1</div>
-      <img src="atividades-biblicas-KVvsaskE.png" alt="Passatempos Bíblicos">
+      <div class="img-wrap"><img src="atividades-biblicas-KVvsaskE.png" alt="Passatempos Bíblicos"></div>
       <h3>PASSATEMPOS BÍBLICOS</h3>
       <span class="old">de R$12,90</span>
       <span class="free">por ZERO!</span>
@@ -1298,7 +1316,7 @@ footer {
 
     <div class="bonus-item">
       <div class="badge">2</div>
-      <img src="bonus-passatempos-BFU9Er5V.png" alt="Aventuras Bíblicas">
+      <div class="img-wrap"><img src="bonus-passatempos-BFU9Er5V.png" alt="Aventuras Bíblicas"></div>
       <h3>AVENTURAS BÍBLICAS</h3>
       <span class="old">de R$9,90</span>
       <span class="free">por ZERO!</span>
@@ -1307,7 +1325,7 @@ footer {
 
     <div class="bonus-item">
       <div class="badge">3</div>
-      <img src="bonus-animais-Bfo8BbLD.png" alt="Atividades Animais">
+      <div class="img-wrap"><img src="bonus-animais-Bfo8BbLD.png" alt="Atividades Animais"></div>
       <h3>ATIVIDADES ANIMAIS</h3>
       <span class="old">de R$6,90</span>
       <span class="free">por ZERO!</span>
@@ -1350,7 +1368,7 @@ footer {
 
   <div class="test-grid max860">
     <div class="test-card">
-      <img src="depoimento-1-B383RICy.png" alt="Depoimento - Mãe da Rebeca">
+      <div class="img-wrap"><img src="depoimento-1-B383RICy.png" alt="Depoimento - Mãe da Rebeca"></div>
       <div class="test-body">
         <div class="test-name">Mãe da Rebeca</div>
         <p>"Minha filha de 6 anos largou o celular para fazer as atividades. Em poucos dias já começou a falar sobre as histórias bíblicas em casa."</p>
@@ -1358,7 +1376,7 @@ footer {
     </div>
 
     <div class="test-card">
-      <img src="depoimento-2-BX10V6rz.png" alt="Depoimento - Mãe do Felipe">
+      <div class="img-wrap"><img src="depoimento-2-BX10V6rz.png" alt="Depoimento - Mãe do Felipe"></div>
       <div class="test-body">
         <div class="test-name">Mãe do Felipe</div>
         <p>"Material simples, educativo e muito bem feito. Uso com meus filhos todos os dias antes de dormir."</p>
@@ -1366,7 +1384,7 @@ footer {
     </div>
 
     <div class="test-card">
-      <img src="depoimento-3-BUwpJtop.png" alt="Depoimento - Mãe da Beatriz">
+      <div class="img-wrap"><img src="depoimento-3-BUwpJtop.png" alt="Depoimento - Mãe da Beatriz"></div>
       <div class="test-body">
         <div class="test-name">Mãe da Beatriz</div>
         <p>"Achei que seria só mais um PDF, mas me surpreendi. As atividades realmente prendem a atenção das crianças."</p>
