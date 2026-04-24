@@ -5,11 +5,419 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seu Produto | Oferta Especial</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Nunito', sans-serif; color: #111827; background: #fff; overflow-x: hidden; }
 
-/* BONUS STYLE IGUAL PRINT */
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #111827;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+.topbar {
+  background: #f97316;
+  color: #fff;
+  text-align: center;
+  padding: 11px 16px;
+  font-weight: 800;
+  font-size: 0.97rem;
+}
+
+/* BOTÕES */
+.btn,
+.btn-inline,
+.btn-orange {
+  text-decoration: none;
+  text-align: center;
+  transition: .18s;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  background: #16a34a;
+  color: #fff;
+  padding: 19px 24px;
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 22px rgba(22,163,74,.38);
+}
+
+.btn:hover,
+.btn-inline:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+}
+
+.btn-inline {
+  display: inline-block;
+  background: #16a34a;
+  color: #fff;
+  padding: 17px 38px;
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: .95rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 20px rgba(22,163,74,.32);
+}
+
+.btn-orange {
+  display: inline-block;
+  background: #f97316;
+  color: #fff;
+  padding: 20px 40px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 30px rgba(249,115,22,.5);
+}
+
+.btn-orange:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(175deg, #cfe8fc 0%, #d4edfc 30%, #dff0e8 80%, #e8f8f0 100%);
+  padding: 44px 24px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(253,224,71,0.55) 0%, transparent 68%);
+  top: 40px;
+  left: -60px;
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-size: 0.92rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.07);
+}
+
+.hero-badge .stars { color: #f59e0b; }
+
+.hero-pill {
+  display: inline-block;
+  background: #f97316;
+  color: #fff;
+  border-radius: 999px;
+  padding: 9px 26px;
+  font-weight: 800;
+  font-size: 0.93rem;
+  margin-bottom: 26px;
+}
+
+.hero-headline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5.2vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.18;
+  max-width: 820px;
+  margin: 0 auto 48px;
+}
+
+.c-blue { color: #1d4ed8; }
+.c-green { color: #16a34a; }
+.c-yellow {
+  background: #fde68a;
+  padding: 1px 5px;
+  border-radius: 5px;
+  color: #92400e;
+}
+
+.hero-cols {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  flex: 0 0 auto;
+  width: min(380px, 88vw);
+}
+
+.hero-left img {
+  width: 100%;
+  filter: drop-shadow(0 16px 36px rgba(0,0,0,.13));
+}
+
+.hero-right {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+}
+
+.hero-right .desc {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #1f2937;
+  margin-bottom: 14px;
+}
+
+.hero-right .desc strong { font-weight: 800; }
+.hero-right .desc .hl { color: #16a34a; font-weight: 800; }
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.hero-tag {
+  background: #fff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 999px;
+  padding: 5px 15px;
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+
+.hero-tag .ck { color: #16a34a; }
+
+.hero-cta-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 900;
+  color: #1d4ed8;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 18px;
+  line-height: 1.25;
+}
+
+.price-card {
+  background: #fff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 18px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.06);
+}
+
+.price-card .lbl {
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.price-old {
+  font-size: 1rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+  font-weight: 700;
+}
+
+.price-new {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #16a34a;
+  line-height: 1;
+}
+
+.guar-txt {
+  font-size: .86rem;
+  font-weight: 800;
+  color: #16a34a;
+}
+
+.secure {
+  text-align: center;
+  font-size: .8rem;
+  color: #9ca3af;
+  margin-top: 9px;
+}
+
+.secure .g { color: #16a34a; }
+
+/* SECTIONS */
+.sec {
+  padding: 56px 24px;
+}
+
+.sec-center { text-align: center; }
+.sec-white { background: #fff; }
+.sec-sky { background: linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 100%); }
+.sec-blue { background: #1d9bf0; }
+.sec-light { background: linear-gradient(160deg, #f0f9ff, #f0fdf4); }
+
+.sec h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  font-weight: 900;
+  margin-bottom: 32px;
+}
+
+.max860 { max-width: 860px; margin: 0 auto; }
+.max720 { max-width: 720px; margin: 0 auto; }
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.about-text strong { font-weight: 800; }
+.about-text .hl { color: #1d4ed8; font-weight: 700; }
+.about-text .hl2 { color: #16a34a; font-weight: 700; }
+
+.btn-center-wrap {
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* PRODUTOS */
+.section-pill {
+  display: inline-block;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 999px;
+  padding: 11px 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin-bottom: 36px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+.prod-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  transition: .2s;
+}
+
+.prod-card:hover { transform: translateY(-4px); }
+
+.prod-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.prod-card .info {
+  padding: 14px 12px 18px;
+  background: #fff;
+  text-align: center;
+}
+
+.prod-card .info h4 {
+  font-weight: 900;
+  font-size: .98rem;
+  margin-bottom: 6px;
+}
+
+.prod-card .info .ptag {
+  font-size: .9rem;
+  color: #6b7280;
+  font-weight: 800;
+  text-decoration: line-through;
+}
+
+.total-row {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.total-row big {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+/* PERFEITO PARA */
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.fw-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 26px;
+  flex: 1 1 200px;
+  max-width: 250px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.07);
+  text-align: left;
+}
+
+.fw-card .ic {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.fw-card h4 {
+  font-weight: 800;
+  font-size: .93rem;
+  margin-bottom: 6px;
+}
+
+.fw-card p {
+  font-size: .83rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* BÔNUS */
 .bonus-showcase {
   display: flex;
   gap: 20px;
@@ -77,279 +485,72 @@ body { font-family: 'Nunito', sans-serif; color: #111827; background: #fff; over
   justify-content: center;
 }
 
-/* BOTÃO LARANJA (IGUAL PRINT) */
-.btn-orange {
-  display: inline-block;
-  background: #f97316;
-  color: #fff;
-  padding: 20px 40px;
-  border-radius: 999px;
-  font-weight: 900;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 1.1rem;
-  box-shadow: 0 8px 30px rgba(249,115,22,.5);
-  transition: .2s;
-}
-
-.btn-orange:hover {
-  background: #ea580c;
-  transform: translateY(-2px);
-}
-
-/* TOP BAR */
-.topbar {
-  background: #f97316;
-  color: #fff;
-  text-align: center;
-  padding: 11px 16px;
-  font-weight: 800;
-  font-size: 0.97rem;
-}
-
-/* HERO */
-.hero {
-  background: linear-gradient(175deg, #cfe8fc 0%, #d4edfc 30%, #dff0e8 80%, #e8f8f0 100%);
-  padding: 44px 24px 64px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  width: 280px; height: 280px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(253,224,71,0.55) 0%, transparent 68%);
-  top: 40px; left: -60px;
-  pointer-events: none;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+/* OFERTA */
+.offer-box {
   background: #fff;
-  border: 1px solid #d1d5db;
-  border-radius: 999px;
-  padding: 8px 20px;
-  font-size: 0.92rem;
-  font-weight: 800;
-  margin-bottom: 18px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.07);
-}
-.hero-badge .stars { color: #f59e0b; }
-
-.hero-pill {
-  display: inline-block;
-  background: #f97316;
-  color: #fff;
-  border-radius: 999px;
-  padding: 9px 26px;
-  font-weight: 800;
-  font-size: 0.93rem;
-  margin-bottom: 26px;
-}
-
-.hero-headline {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2rem, 5.2vw, 3.2rem);
-  font-weight: 900;
-  line-height: 1.18;
-  max-width: 820px;
-  margin: 0 auto 48px;
-  color: #111827;
-}
-.c-blue  { color: #1d4ed8; }
-.c-green { color: #16a34a; }
-.c-yellow { background: #fde68a; padding: 1px 5px; border-radius: 5px; color: #92400e; }
-
-.hero-cols {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 48px;
-  max-width: 1000px;
+  border: 2px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 38px 34px;
+  max-width: 560px;
   margin: 0 auto;
-  flex-wrap: wrap;
+  box-shadow: 0 8px 36px rgba(0,0,0,.09);
+  text-align: center;
 }
 
-.hero-left { flex: 0 0 auto; width: min(380px, 88vw); }
-.hero-left img { width: 100%; filter: drop-shadow(0 16px 36px rgba(0,0,0,.13)); }
+.offer-box .fire { font-size: 1.6rem; }
 
-.hero-right { flex: 1; min-width: 280px; text-align: left; }
-.hero-right .desc { font-size: 1rem; line-height: 1.65; color: #1f2937; margin-bottom: 14px; }
-.hero-right .desc strong { font-weight: 800; }
-.hero-right .desc .hl { color: #16a34a; font-weight: 800; }
+.offer-box h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #f97316;
+  margin: 8px 0 22px;
+  text-transform: uppercase;
+}
 
-.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-.hero-tag {
-  background: #fff;
-  border: 1.5px solid #d1d5db;
-  border-radius: 999px;
-  padding: 5px 15px;
-  font-size: 0.83rem;
+.offer-list {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.offer-li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: .9rem;
   font-weight: 700;
 }
-.hero-tag .ck { color: #16a34a; }
 
-.hero-cta-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.08rem;
-  font-weight: 900;
-  color: #1d4ed8;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-  margin-bottom: 18px;
-  line-height: 1.25;
-}
-
-.price-card {
-  background: #fff;
-  border: 1.5px solid #d1d5db;
-  border-radius: 18px;
-  padding: 20px 24px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 18px rgba(0,0,0,.06);
-}
-.price-card .lbl { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #6b7280; margin-bottom: 6px; }
-.price-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
-.price-old { font-size: 1rem; color: #9ca3af; text-decoration: line-through; font-weight: 700; }
-.price-new { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; font-weight: 900; color: #16a34a; line-height: 1; }
-.guar-txt { font-size: .86rem; font-weight: 800; color: #16a34a; display: flex; align-items: center; gap: 6px; }
-
-.btn {
-  display: block; width: 100%;
-  background: #16a34a; color: #fff;
-  text-align: center; padding: 19px 24px;
-  border-radius: 12px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem; font-weight: 900;
-  letter-spacing: .04em; text-transform: uppercase;
-  text-decoration: none; border: none; cursor: pointer;
-  transition: background .18s, transform .1s;
-  box-shadow: 0 6px 22px rgba(22,163,74,.38);
-}
-.btn:hover { background: #15803d; transform: translateY(-2px); }
-.btn:active { transform: translateY(0); }
-
-.secure {
-  text-align: center; font-size: .8rem; color: #9ca3af;
-  margin-top: 9px;
-  display: flex; align-items: center; justify-content: center; gap: 5px;
-}
-.secure .g { color: #16a34a; }
-
-/* SECTIONS */
-.sec { padding: 56px 24px; }
-.sec-center { text-align: center; }
-.sec-white { background: #fff; }
-.sec-sky { background: linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 100%); }
-.sec-blue { background: #1d9bf0; }
-.sec-light { background: linear-gradient(160deg, #f0f9ff, #f0fdf4); }
-
-.sec h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.35rem, 3vw, 1.65rem);
-  font-weight: 900; margin-bottom: 32px; color: #111827;
-}
-.max860 { max-width: 860px; margin: 0 auto; }
-.max720 { max-width: 720px; margin: 0 auto; }
-
-/* ABOUT */
-.about-text { font-size: 1rem; line-height: 1.75; color: #1f2937; text-align: center; margin-bottom: 16px; }
-.about-text strong { font-weight: 800; }
-.about-text .hl  { color: #1d4ed8; font-weight: 700; }
-.about-text .hl2 { color: #16a34a; font-weight: 700; }
-
-.btn-center-wrap { text-align: center; margin-top: 12px; }
-.btn-inline {
-  display: inline-block;
-  background: #16a34a; color: #fff;
-  padding: 17px 38px; border-radius: 12px;
-  font-family: 'Montserrat', sans-serif; font-weight: 900;
-  font-size: .95rem; letter-spacing: .04em;
-  text-decoration: none; text-transform: uppercase;
-  transition: background .18s, transform .1s;
-  box-shadow: 0 6px 20px rgba(22,163,74,.32);
-}
-.btn-inline:hover { background: #15803d; transform: translateY(-2px); }
-
-/* PRODUCTS GRID */
-.section-pill {
-  display: inline-block;
-  border: 2px solid #fff; color: #fff;
-  border-radius: 999px; padding: 11px 30px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem; font-weight: 900; margin-bottom: 36px;
-}
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-bottom: 28px;
-}
-.prod-card {
-  background: #fff; border-radius: 16px; overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,.12); transition: transform .2s;
-}
-.prod-card:hover { transform: translateY(-4px); }
-.prod-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  display: block;
-}
-.prod-card .info { padding: 14px 12px 18px; background: #fff; text-align: center; }
-.prod-card .info h4 { font-weight: 900; font-size: .98rem; margin-bottom: 6px; color: #111827; }
-.prod-card .info .ptag { font-size: .9rem; color: #6b7280; font-weight: 800; text-decoration: line-through; }
-
-.total-row { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 24px; text-align: center; }
-.total-row big { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 900; }
-
-/* FOR WHO */
-.cards-row { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 32px; }
-.fw-card {
-  background: #fff; border-radius: 16px; padding: 24px 26px;
-  flex: 1 1 200px; max-width: 250px;
-  box-shadow: 0 4px 14px rgba(0,0,0,.07); text-align: left;
-}
-.fw-card .ic { font-size: 2rem; margin-bottom: 10px; }
-.fw-card h4 { font-weight: 800; font-size: .93rem; margin-bottom: 6px; }
-.fw-card p { font-size: .83rem; color: #6b7280; line-height: 1.5; }
-
-/* OFFER BOX */
-.offer-box {
-  background: #fff; border: 2px solid #e5e7eb; border-radius: 24px;
-  padding: 38px 34px; max-width: 560px; margin: 0 auto;
-  box-shadow: 0 8px 36px rgba(0,0,0,.09); text-align: center;
-}
-.offer-box .fire { font-size: 1.6rem; }
-.offer-box h2 {
-  font-family: 'Montserrat', sans-serif; font-size: 1.25rem;
-  font-weight: 900; color: #f97316; margin: 8px 0 22px; text-transform: uppercase;
-}
-.offer-list { text-align: left; margin-bottom: 24px; }
-.offer-li {
-  display: flex; align-items: flex-start; gap: 10px;
-  padding: 9px 0; border-bottom: 1px solid #f3f4f6;
-  font-size: .9rem; font-weight: 700;
-}
 .offer-li:last-child { border-bottom: none; }
 .offer-li .ck { color: #16a34a; flex-shrink: 0; }
-.offer-prices { margin-bottom: 22px; }
-.offer-prices .was { font-size: 1rem; color: #9ca3af; text-decoration: line-through; }
+
+.offer-prices {
+  margin-bottom: 22px;
+}
+
+.offer-prices .was {
+  font-size: 1rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
 .offer-prices .now {
   display: block;
-  font-family: 'Montserrat', sans-serif; font-size: 2.9rem;
-  font-weight: 900; color: #16a34a; line-height: 1.1;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.9rem;
+  font-weight: 900;
+  color: #16a34a;
+  line-height: 1.1;
 }
-.offer-prices .sub2 { font-size: .82rem; color: #9ca3af; }
 
-/* ===================== */
-/* TESTIMONIALS UPDATED  */
-/* ===================== */
+.offer-prices .sub2 {
+  font-size: .82rem;
+  color: #9ca3af;
+}
+
+/* DEPOIMENTOS */
 .test-grid {
   display: flex;
   flex-wrap: wrap;
@@ -394,64 +595,533 @@ body { font-family: 'Nunito', sans-serif; color: #111827; background: #fff; over
   font-style: italic;
 }
 
-/* GUARANTEE */
-.gbox { max-width: 600px; margin: 0 auto; text-align: center; }
-.gbox .gicon { font-size: 4.5rem; margin-bottom: 16px; }
-.gbox p { font-size: .96rem; color: #6b7280; line-height: 1.75; margin-bottom: 28px; }
+/* GARANTIA */
+.gbox {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-/* HOW */
+.gbox .gicon {
+  font-size: 4.5rem;
+  margin-bottom: 16px;
+}
+
+.gbox p {
+  font-size: .96rem;
+  color: #6b7280;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+/* COMO FUNCIONA */
 .steps {
-  display: flex; flex-wrap: wrap; gap: 24px;
-  justify-content: center; max-width: 680px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  max-width: 680px;
   margin: 0 auto 32px;
 }
-.step { flex: 1 1 130px; max-width: 170px; text-align: center; }
-.step-n {
-  width: 46px; height: 46px; border-radius: 50%;
-  background: #16a34a; color: #fff;
-  font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.1rem;
-  display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;
+
+.step {
+  flex: 1 1 130px;
+  max-width: 170px;
+  text-align: center;
 }
-.step .sic { font-size: 2rem; margin-bottom: 6px; }
-.step h4 { font-weight: 800; font-size: .88rem; }
+
+.step-n {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #16a34a;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.step .sic {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.step h4 {
+  font-weight: 800;
+  font-size: .88rem;
+}
 
 /* FAQ */
-.faq-wrap { max-width: 700px; margin: 0 auto; }
-details.faq { border-bottom: 1px solid #e5e7eb; padding: 16px 0; }
-details.faq summary {
-  font-weight: 700; font-size: .95rem; cursor: pointer;
-  list-style: none; display: flex; justify-content: space-between;
-  align-items: center; gap: 12px; color: #111827;
+.faq-wrap {
+  max-width: 700px;
+  margin: 0 auto;
 }
-details.faq summary::-webkit-details-marker { display: none; }
-details.faq summary::after { content: '+'; font-size: 1.4rem; color: #9ca3af; flex-shrink: 0; }
-details[open].faq summary::after { content: '−'; }
-details.faq p { margin-top: 10px; font-size: .9rem; color: #6b7280; line-height: 1.7; }
 
-/* FINAL CHECKS */
-.final-checks {
-  display: flex; flex-wrap: wrap; gap: 8px 22px;
-  justify-content: center; margin-bottom: 28px;
-  font-size: .92rem; font-weight: 700;
+details.faq {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 0;
 }
-.final-checks span { display: flex; align-items: center; gap: 6px; }
+
+details.faq summary {
+  font-weight: 700;
+  font-size: .95rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+details.faq summary::-webkit-details-marker { display: none; }
+
+details.faq summary::after {
+  content: '+';
+  font-size: 1.4rem;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+details[open].faq summary::after { content: '−'; }
+
+details.faq p {
+  margin-top: 10px;
+  font-size: .9rem;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+/* FINAL */
+.final-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  justify-content: center;
+  margin-bottom: 28px;
+  font-size: .92rem;
+  font-weight: 700;
+}
+
+.final-checks span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .final-checks .g { color: #16a34a; }
 
-footer { background: #0f172a; color: #64748b; text-align: center; padding: 22px 20px; font-size: .82rem; }
-
-@media (max-width: 900px) {
-  .products-grid { grid-template-columns: repeat(2, 1fr); }
+footer {
+  background: #0f172a;
+  color: #64748b;
+  text-align: center;
+  padding: 22px 20px;
+  font-size: .82rem;
 }
 
+/* TABLET */
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* CELULAR - CARDS COMPACTOS */
 @media (max-width: 640px) {
-  .products-grid { grid-template-columns: 1fr; }
-  .prod-card img { height: auto; }
-  .hero-cols { flex-direction: column; }
-  .hero-right { text-align: center; }
-  .hero-tags { justify-content: center; }
+  .topbar {
+    font-size: .78rem;
+    padding: 9px 10px;
+    line-height: 1.35;
+  }
+
+  .hero {
+    padding: 28px 14px 38px;
+  }
+
+  .hero-badge {
+    font-size: .75rem;
+    padding: 7px 12px;
+    line-height: 1.3;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-pill {
+    font-size: .78rem;
+    padding: 8px 16px;
+    margin-bottom: 18px;
+  }
+
+  .hero-headline {
+    font-size: 1.55rem;
+    line-height: 1.18;
+    margin-bottom: 28px;
+  }
+
+  .hero-cols {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero-left {
+    width: min(280px, 88vw);
+  }
+
+  .hero-right {
+    text-align: center;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .hero-right .desc {
+    font-size: .9rem;
+    line-height: 1.55;
+  }
+
+  .hero-tags {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .hero-tag {
+    font-size: .75rem;
+    padding: 5px 10px;
+  }
+
+  .hero-cta-label {
+    font-size: .88rem;
+    margin-bottom: 12px;
+  }
+
+  .price-card {
+    padding: 15px 16px;
+    border-radius: 14px;
+  }
+
+  .price-row {
+    justify-content: center;
+  }
+
+  .price-new {
+    font-size: 2rem;
+  }
+
+  .btn,
+  .btn-inline,
+  .btn-orange {
+    font-size: .78rem;
+    padding: 14px 14px;
+    line-height: 1.25;
+  }
+
+  .btn-orange {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .sec {
+    padding: 36px 14px;
+  }
+
+  .sec h2 {
+    font-size: 1.2rem;
+    margin-bottom: 22px;
+    line-height: 1.25;
+  }
+
+  .about-text {
+    font-size: .9rem;
+    line-height: 1.6;
+  }
+
+  .section-pill {
+    font-size: .9rem;
+    padding: 9px 18px;
+    margin-bottom: 22px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .prod-card {
+    border-radius: 12px;
+  }
+
+  .prod-card img {
+    height: 155px;
+    object-fit: cover;
+  }
+
+  .prod-card .info {
+    padding: 9px 6px 11px;
+  }
+
+  .prod-card .info h4 {
+    font-size: .76rem;
+    line-height: 1.2;
+    margin-bottom: 3px;
+  }
+
+  .prod-card .info .ptag {
+    font-size: .72rem;
+  }
+
+  .total-row {
+    font-size: .82rem;
+    line-height: 1.4;
+    margin-bottom: 18px;
+  }
+
+  .total-row big {
+    display: block;
+    font-size: 1rem;
+    margin-top: 4px;
+  }
+
+  .cards-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .fw-card {
+    max-width: 100%;
+    width: 100%;
+    padding: 14px 15px;
+    border-radius: 13px;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    column-gap: 10px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .fw-card .ic {
+    font-size: 1.55rem;
+    margin-bottom: 0;
+    grid-row: span 2;
+  }
+
+  .fw-card h4 {
+    font-size: .82rem;
+    margin-bottom: 2px;
+  }
+
+  .fw-card p {
+    font-size: .74rem;
+    line-height: 1.35;
+  }
+
+  .bonus-showcase {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .bonus-item {
+    width: 100%;
+    border-radius: 12px;
+    padding-bottom: 10px;
+  }
+
+  .bonus-item img {
+    height: 135px;
+    object-fit: cover;
+  }
+
+  .bonus-item h3 {
+    font-size: .66rem;
+    line-height: 1.15;
+    margin-top: 7px;
+    padding: 0 6px;
+  }
+
+  .bonus-item .old,
+  .bonus-item .free {
+    font-size: .68rem;
+    padding: 0 6px;
+  }
+
+  .bonus-item .desc {
+    font-size: .62rem;
+    line-height: 1.25;
+    padding: 4px 6px 0;
+  }
+
+  .badge {
+    width: 24px;
+    height: 24px;
+    font-size: .72rem;
+    top: 6px;
+    left: 6px;
+  }
+
+  .offer-box {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .offer-box h2 {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  .offer-li {
+    font-size: .82rem;
+    padding: 7px 0;
+  }
+
+  .offer-prices .now {
+    font-size: 2.3rem;
+  }
+
+  .test-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .test-card {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    align-items: stretch;
+    border-radius: 13px;
+  }
+
+  .test-card img {
+    height: 100%;
+    min-height: 118px;
+    object-fit: cover;
+  }
+
+  .test-body {
+    padding: 12px 12px;
+  }
+
+  .test-name {
+    font-size: .78rem;
+    margin-bottom: 5px;
+  }
+
+  .test-card p {
+    font-size: .72rem;
+    line-height: 1.45;
+  }
+
+  .gbox .gicon {
+    font-size: 3.2rem;
+  }
+
+  .gbox p {
+    font-size: .88rem;
+    line-height: 1.6;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .step {
+    max-width: 100%;
+  }
+
+  .step-n {
+    width: 36px;
+    height: 36px;
+    font-size: .82rem;
+    margin-bottom: 7px;
+  }
+
+  .step .sic {
+    font-size: 1.45rem;
+  }
+
+  .step h4 {
+    font-size: .7rem;
+    line-height: 1.25;
+  }
+
+  details.faq {
+    padding: 13px 0;
+  }
+
+  details.faq summary {
+    font-size: .86rem;
+  }
+
+  details.faq p {
+    font-size: .82rem;
+    line-height: 1.55;
+  }
+
+  .final-checks {
+    font-size: .8rem;
+    gap: 8px 12px;
+  }
+}
+
+/* CELULAR MUITO PEQUENO */
+@media (max-width: 390px) {
+  .products-grid {
+    gap: 8px;
+  }
+
+  .prod-card img {
+    height: 140px;
+  }
+
+  .bonus-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .bonus-item {
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    text-align: left;
+    min-height: 120px;
+  }
+
+  .bonus-item img {
+    height: 100%;
+    min-height: 120px;
+  }
+
+  .bonus-item h3 {
+    margin-top: 12px;
+    font-size: .78rem;
+  }
+
+  .bonus-item .old,
+  .bonus-item .free {
+    font-size: .74rem;
+  }
+
+  .bonus-item .desc {
+    font-size: .68rem;
+  }
+
+  .badge {
+    width: 22px;
+    height: 22px;
+    font-size: .68rem;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <div class="topbar">⚡ 🔥 OFERTA LIMITADA: De R$97 por apenas R$27,90 — Economize 71%! ⚡</div>
@@ -506,7 +1176,6 @@ footer { background: #0f172a; color: #64748b; text-align: center; padding: 22px 
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="sec sec-white sec-center">
   <div class="max720">
     <p class="about-text">
@@ -526,13 +1195,11 @@ footer { background: #0f172a; color: #64748b; text-align: center; padding: 22px 
   </div>
 </section>
 
-<!-- O QUE VOCÊ IRÁ RECEBER -->
 <section class="sec sec-blue sec-center">
   <span class="section-pill">O Que Você Irá Receber Nesse Kit</span>
 
   <div class="max860">
     <div class="products-grid">
-
       <div class="prod-card">
         <img src="andando-jesus-COLSvjBc.png" alt="Andando com Jesus">
         <div class="info">
@@ -580,7 +1247,6 @@ footer { background: #0f172a; color: #64748b; text-align: center; padding: 22px 
           <div class="ptag">R$12,90</div>
         </div>
       </div>
-
     </div>
 
     <p class="total-row">
@@ -593,25 +1259,37 @@ footer { background: #0f172a; color: #64748b; text-align: center; padding: 22px 
   </div>
 </section>
 
-<!-- PERFEITO PARA -->
 <section class="sec sec-sky sec-center">
   <h2>Perfeito Para:</h2>
+
   <div class="cards-row max860">
-    <div class="fw-card"><div class="ic">👶</div><h4>Crianças de 3 a 10 anos</h4><p>Atividades adaptadas para cada faixa etária</p></div>
-    <div class="fw-card"><div class="ic">👩‍🏫</div><h4>Professora de Educação Infantil</h4><p>Material completo para sala de aula</p></div>
-    <div class="fw-card"><div class="ic">📚</div><h4>Professora de Reforço Escolar</h4><p>Atividades extras para fixar o aprendizado</p></div>
+    <div class="fw-card">
+      <div class="ic">👶</div>
+      <h4>Crianças de 3 a 10 anos</h4>
+      <p>Atividades adaptadas para cada faixa etária</p>
+    </div>
+
+    <div class="fw-card">
+      <div class="ic">👩‍🏫</div>
+      <h4>Professora de Educação Infantil</h4>
+      <p>Material completo para sala de aula</p>
+    </div>
+
+    <div class="fw-card">
+      <div class="ic">📚</div>
+      <h4>Professora de Reforço Escolar</h4>
+      <p>Atividades extras para fixar o aprendizado</p>
+    </div>
   </div>
+
   <a href="#comprar" class="btn-inline">🛒 QUERO MEU KIT AGORA - R$27,90 →</a>
 </section>
 
-<!-- BÔNUS -->
 <section class="sec sec-white sec-center">
-
   <div class="bonus-showcase">
-
     <div class="bonus-item">
       <div class="badge">1</div>
-      <img src="atividades-biblicas-KVvsaskE.png" alt="">
+      <img src="atividades-biblicas-KVvsaskE.png" alt="Passatempos Bíblicos">
       <h3>PASSATEMPOS BÍBLICOS</h3>
       <span class="old">de R$12,90</span>
       <span class="free">por ZERO!</span>
@@ -620,7 +1298,7 @@ footer { background: #0f172a; color: #64748b; text-align: center; padding: 22px 
 
     <div class="bonus-item">
       <div class="badge">2</div>
-      <img src="bonus-passatempos-BFU9Er5V.png" alt="">
+      <img src="bonus-passatempos-BFU9Er5V.png" alt="Aventuras Bíblicas">
       <h3>AVENTURAS BÍBLICAS</h3>
       <span class="old">de R$9,90</span>
       <span class="free">por ZERO!</span>
@@ -629,26 +1307,24 @@ footer { background: #0f172a; color: #64748b; text-align: center; padding: 22px 
 
     <div class="bonus-item">
       <div class="badge">3</div>
-      <img src="bonus-animais-Bfo8BbLD.png" alt="">
+      <img src="bonus-animais-Bfo8BbLD.png" alt="Atividades Animais">
       <h3>ATIVIDADES ANIMAIS</h3>
       <span class="old">de R$6,90</span>
       <span class="free">por ZERO!</span>
       <p class="desc">Um manual divertido e completo, para ensinar as crianças a orar enquanto brincam</p>
     </div>
-
   </div>
 
   <a href="#comprar" class="btn-orange">
     🛒 QUERO MEU KIT AGORA - R$27,90 →
   </a>
-
 </section>
 
-<!-- OFFER BOX -->
 <section class="sec sec-light sec-center" id="comprar">
   <div class="offer-box">
     <div class="fire">🔥</div>
     <h2>SUPER OFERTA POR TEMPO LIMITADO</h2>
+
     <div class="offer-list">
       <div class="offer-li"><span class="ck">✓</span> +400 atividades Bíblicas</div>
       <div class="offer-li"><span class="ck">✓</span> Bônus #1: Passatempos Bíblicos</div>
@@ -657,21 +1333,22 @@ footer { background: #0f172a; color: #64748b; text-align: center; padding: 22px 
       <div class="offer-li"><span class="ck">✓</span> Acesso Vitalício</div>
       <div class="offer-li"><span class="ck">✓</span> 7 dias de Garantia</div>
     </div>
+
     <div class="offer-prices">
       <span class="was">R$97,00</span>
       <span class="now">R$27,90</span>
       <span class="sub2">Pagamento único • Acesso vitalício</span>
     </div>
+
     <a href="#" class="btn">🛒 QUERO MEU KIT AGORA →</a>
-    <p class="secure" style="margin-top:12px;"><span class="g">🔒</span> Compra 100% segura • Acesso imediato</p>
+    <p class="secure"><span class="g">🔒</span> Compra 100% segura • Acesso imediato</p>
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
 <section class="sec sec-sky sec-center">
   <h2>O que outros pais estão dizendo sobre o <span style="color:#1d9bf0;font-style:italic;">Crescendo em Deus Kids!</span></h2>
-  <div class="test-grid max860">
 
+  <div class="test-grid max860">
     <div class="test-card">
       <img src="depoimento-1-B383RICy.png" alt="Depoimento - Mãe da Rebeca">
       <div class="test-body">
@@ -695,12 +1372,11 @@ footer { background: #0f172a; color: #64748b; text-align: center; padding: 22px 
         <p>"Achei que seria só mais um PDF, mas me surpreendi. As atividades realmente prendem a atenção das crianças."</p>
       </div>
     </div>
-
   </div>
+
   <a href="#comprar" class="btn-inline">🛒 QUERO MEU KIT AGORA - R$27,90 →</a>
 </section>
 
-<!-- GARANTIA -->
 <section class="sec sec-white sec-center">
   <div class="gbox">
     <div class="gicon">🛡️</div>
@@ -710,42 +1386,76 @@ footer { background: #0f172a; color: #64748b; text-align: center; padding: 22px 
   </div>
 </section>
 
-<!-- COMO FUNCIONA -->
 <section class="sec sec-sky sec-center">
   <h2>Como Funciona o Acesso ao KIT</h2>
+
   <div class="steps">
-    <div class="step"><div class="step-n">01</div><div class="sic">📧</div><h4>Chega no seu e-mail</h4></div>
-    <div class="step"><div class="step-n">02</div><div class="sic">🖨️</div><h4>Você imprime</h4></div>
-    <div class="step"><div class="step-n">03</div><div class="sic">🙌</div><h4>Ajude seu filho(a) a realizar</h4></div>
+    <div class="step">
+      <div class="step-n">01</div>
+      <div class="sic">📧</div>
+      <h4>Chega no seu e-mail</h4>
+    </div>
+
+    <div class="step">
+      <div class="step-n">02</div>
+      <div class="sic">🖨️</div>
+      <h4>Você imprime</h4>
+    </div>
+
+    <div class="step">
+      <div class="step-n">03</div>
+      <div class="sic">🙌</div>
+      <h4>Ajude seu filho(a) a realizar</h4>
+    </div>
   </div>
+
   <a href="#comprar" class="btn-inline">🛒 QUERO MEU KIT AGORA - R$27,90 →</a>
 </section>
 
-<!-- FAQ -->
 <section class="sec sec-white">
   <div class="faq-wrap">
     <h2 style="text-align:center;">Dúvidas Frequentes</h2>
-    <details class="faq"><summary>Como vou receber as apostilas?</summary><p>Após a confirmação do pagamento, você receberá um e-mail com o link para download dos materiais. O acesso é imediato!</p></details>
-    <details class="faq"><summary>Qual o formato das apostilas?</summary><p>Todos os materiais estão no formato PDF, prontos para imprimir em qualquer impressora comum.</p></details>
-    <details class="faq"><summary>Quanto tempo demora para receber o material?</summary><p>O acesso é imediato após a confirmação do pagamento. Você receberá o link em poucos minutos no seu e-mail.</p></details>
-    <details class="faq"><summary>O pagamento é único?</summary><p>Sim! É um pagamento único de R$27,90, sem mensalidades ou taxas. O acesso é vitalício.</p></details>
+
+    <details class="faq">
+      <summary>Como vou receber as apostilas?</summary>
+      <p>Após a confirmação do pagamento, você receberá um e-mail com o link para download dos materiais. O acesso é imediato!</p>
+    </details>
+
+    <details class="faq">
+      <summary>Qual o formato das apostilas?</summary>
+      <p>Todos os materiais estão no formato PDF, prontos para imprimir em qualquer impressora comum.</p>
+    </details>
+
+    <details class="faq">
+      <summary>Quanto tempo demora para receber o material?</summary>
+      <p>O acesso é imediato após a confirmação do pagamento. Você receberá o link em poucos minutos no seu e-mail.</p>
+    </details>
+
+    <details class="faq">
+      <summary>O pagamento é único?</summary>
+      <p>Sim! É um pagamento único de R$27,90, sem mensalidades ou taxas. O acesso é vitalício.</p>
+    </details>
   </div>
 </section>
 
-<!-- FINAL CTA -->
 <section class="sec sec-light sec-center">
   <h2 style="max-width:560px;margin:0 auto 22px;line-height:1.3;">
     Não Perca Essa Oportunidade!<br>
     Transforme a educação do seu filho com valores cristãos enquanto ele se diverte!
   </h2>
+
   <div class="final-checks">
     <span><span class="g">✓</span> Acesso imediato</span>
     <span><span class="g">✓</span> Garantia de 7 dias</span>
     <span><span class="g">✓</span> Pagamento seguro</span>
   </div>
-  <a href="#comprar" class="btn" style="max-width:440px;margin:0 auto;display:block;">🛒 GARANTIR MEU KIT AGORA - R$27,90 →</a>
+
+  <a href="#comprar" class="btn" style="max-width:440px;margin:0 auto;display:block;">
+    🛒 GARANTIR MEU KIT AGORA - R$27,90 →
+  </a>
 </section>
 
 <footer>© 2026 Kit de Atividades Bíblicas. Todos os direitos reservados.</footer>
+
 </body>
 </html>
